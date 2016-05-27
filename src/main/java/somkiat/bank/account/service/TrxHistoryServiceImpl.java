@@ -32,6 +32,11 @@ public class TrxHistoryServiceImpl {
 			System.out.println(" createTrxHistory Done");
 			
 		}catch(Exception e){
+			try{
+			this.closeSession();
+			}catch(Exception ex){
+				e.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 	}
@@ -53,6 +58,11 @@ public class TrxHistoryServiceImpl {
 			System.out.println(" updateTrxHistory Done");
 			
 		}catch(Exception e){
+			try{
+				this.closeSession();
+				}catch(Exception ex){
+					e.printStackTrace();
+				}
 			e.printStackTrace();
 		}
 	}
@@ -73,6 +83,11 @@ public class TrxHistoryServiceImpl {
 			System.out.println(" deleteTrxHistory Done");
 			
 		}catch(Exception e){
+			try{
+				this.closeSession();
+				}catch(Exception ex){
+					e.printStackTrace();
+				}
 			e.printStackTrace();
 		}
 	}
@@ -92,6 +107,11 @@ public class TrxHistoryServiceImpl {
 			return list;
 			
 		}catch(Exception e){
+			try{
+				this.closeSession();
+				}catch(Exception ex){
+					e.printStackTrace();
+				}
 			e.printStackTrace();
 			return null;
 		}finally{
