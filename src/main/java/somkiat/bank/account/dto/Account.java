@@ -31,6 +31,11 @@ public class Account implements Serializable {
 	@Column(name = "last_update")
 	private Date lastUpdate;
 
+	public String getDisplayAccountNo() {
+		return accountNo.substring(0, 3) + "-" + accountNo.substring(3, 4) + "-" + accountNo.substring(4, 9) + "-"
+				+ accountNo.substring(9, 10);
+	}
+
 	public String getAccountNo() {
 		return accountNo;
 	}
