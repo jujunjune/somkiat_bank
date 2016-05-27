@@ -23,7 +23,7 @@
 					<!--<h1>
 					<font style="padding:15px; ">Bank of Somkiat</font>
 				</h1>-->
-					<img src="${contextPath}/images/logo.png">
+					<img src="${contextPath}/images/logo_new.png">
 				</div>
 				<div class="row">
 					<table width="100%" border="1px" cellspacing="0px"
@@ -32,20 +32,20 @@
 							<td width="20%" valign="top"
 								style="background-color: #000; padding: 5px; color: #fff;">
 								<div style="border-bottom: 1px solid #fff; padding: 10px;">
-									<a href="" style="text-decoration: none; color: #fff;">หน้าแรก</a>
+									<a href="${contextPath}/" style="text-decoration: none; color: #fff;">หน้าแรก</a>
 								</div>
 								<div style="border-bottom: 1px solid #fff; padding: 10px;">
-									<a href="" style="text-decoration: none; color: #fff;">โอนเงิน</a>
+									<a href="${contextPath}/transfer" style="text-decoration: none; color: #fff;">โอนเงิน</a>
 								</div>
 								<div style="border-bottom: 1px solid #fff; padding: 10px;">
-									<a href="" style="text-decoration: none; color: #fff;">รายการเข้า</a>
+									<a href="#" style="text-decoration: none; color: #fff;">รายการเข้า</a>
 								</div>
 								<div
 									style="border-bottom: 1px solid #fff; padding: 10px 10px 10px 40px;">
-									<a href="" style="text-decoration: none; color: #fff;">เงินเข้า</a>
+									<a href="${contextPath}/incomeTrans" style="text-decoration: none; color: #fff;">เงินเข้า</a>
 								</div>
 								<div style="padding: 10px 10px 10px 40px;">
-									<a href="" style="text-decoration: none; color: #fff;">เงินออก</a>
+									<a href="${contextPath}/transHistory" style="text-decoration: none; color: #fff;">เงินออก</a>
 								</div>
 							</td>
 							<td valign="top">
@@ -54,7 +54,7 @@
 										<table>
 											<tr>
 												<td>เลขที่บัญชี :</td>
-												<td id="account_no_label">${account.accountNo}</td>
+												<td id="account_no_label">${account.displayAccountNo}</td>
 
 											</tr>
 											<tr>
@@ -63,9 +63,9 @@
 											</tr>
 											<tr>
 												<td>ยอดเงินคงเหลือ :</td>
-												<td id="account_balance_label"><fmt:formatNumber
+												<td id="account_balance_label" style="text-align:right"><fmt:formatNumber
 														type="number" pattern="#,###.00"
-														value="${account.accountBalance}" /></td>
+														value="${account.accountBalance}" /> บาท</td>
 											</tr>
 											<tr>
 												<td>ปรับปรุงเมื่อ :</td>
