@@ -25,5 +25,6 @@
    <!-- List of XML mapping files -->
    <mapping class="somkiat.bank.account.dto.Account"/>
 
+
 </session-factory>
 </hibernate-configuration>
