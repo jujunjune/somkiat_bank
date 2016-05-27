@@ -27,7 +27,7 @@ public class TrxHistoryServiceImpl {
 			
 			session.getTransaction().commit();
 			
-			session.close();
+			this.closeSession();
 
 			System.out.println(" createTrxHistory Done");
 			
@@ -48,7 +48,7 @@ public class TrxHistoryServiceImpl {
 			
 			session.getTransaction().commit();
 			
-			session.close();
+			this.closeSession();
 
 			System.out.println(" updateTrxHistory Done");
 			
@@ -60,46 +60,52 @@ public class TrxHistoryServiceImpl {
 	public void deleteTrxHistory(TxnHistory obj){
 		try{
 			
-			System.out.println(" updateTrxHistory Begin");
+			System.out.println(" deleteTrxHistory Begin");
 			
-
 			session.beginTransaction();
 			
 			session.delete(obj);
 			
 			session.getTransaction().commit();
 			
-			session.close();
+			this.closeSession();
 
-			System.out.println(" updateTrxHistory Done");
+			System.out.println(" deleteTrxHistory Done");
 			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
 	public List listTrxHistory(TxnHistory obj){
-		Query             query   = null;
+		Query query   = null;
+		List  list = null;
 		try{
 			
 			System.out.println(" listTrxHistory Begin");
 			
 
-			session.beginTransaction();
+			//session.beginTransaction();
 			
 			query = session.createQuery("select p from TxnHistory p ");
 			
 			
+			
 			System.out.println(" ListTrxHistory Done");
-			return query.list();
-			//session.getTransaction().commit();
+			list = query.list();
 			
-			//session.close();
-
-			
+			this.closeSession();
+			return list;
 			
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
+		}finally{
+			query = null;
+			list = null;
 		}
+	}
+	private void closeSession()throws Exception{
+		if(session.isOpen())
+			session.close();
 	}
 }
