@@ -17,6 +17,7 @@
 <body>
 
 	<div class="container-fluid">
+
 		<div class="row">
 			<div class="col-md-12">
 				<div class="page-header" style="border-bottom: 1px solid #000;">
@@ -35,7 +36,7 @@
 									<a href="" style="text-decoration: none; color: #fff;">หน้าแรก</a>
 								</div>
 								<div style="border-bottom: 1px solid #fff; padding: 10px;">
-									<a href="" style="text-decoration: none; color: #fff;">โอนเงิน</a>
+									<a href="${contextPath}/transfer" style="text-decoration: none; color: #fff;">โอนเงิน</a>
 								</div>
 								<div style="border-bottom: 1px solid #fff; padding: 10px;">
 									<a href="" style="text-decoration: none; color: #fff;">รายการเข้า</a>
@@ -82,6 +83,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 
 	<script src="js/jquery.min.js"></script>

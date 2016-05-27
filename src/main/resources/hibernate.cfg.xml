@@ -26,5 +26,6 @@
 	   <mapping class="somkiat.bank.account.dto.MstAccount"/>
 	   <mapping class="somkiat.bank.account.dto.TxnHistory"/>
 
+
 </session-factory>
 </hibernate-configuration>

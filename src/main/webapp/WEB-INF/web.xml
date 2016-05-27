@@ -6,8 +6,8 @@
 	<display-name>Somkiat Bank</display-name>
 
 	<servlet>
-		<servlet-name>viewTransaction</servlet-name>
-		<servlet-class>somkiat.bank.ViewTransaction</servlet-class>
+		<servlet-name>transfer</servlet-name>
+		<servlet-class>somkiat.bank.Transfer</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>viewAccount</servlet-name>
@@ -19,8 +19,8 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>viewTransaction</servlet-name>
-		<url-pattern>/viewTransaction</url-pattern>
+		<servlet-name>transfer</servlet-name>
+		<url-pattern>/transfer</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
