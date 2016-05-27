@@ -9,12 +9,18 @@
     <servlet-name>transHistory</servlet-name>
     <servlet-class>somkiat.bank.TransHistory</servlet-class>
   </servlet> 
-  
+  <servlet>
+		<servlet-name>viewAccount</servlet-name>
+		<servlet-class>somkiat.bank.ViewAccountServlet</servlet-class>
+	</servlet>
   <servlet-mapping>
     <servlet-name>viewTransaction</servlet-name>
     <url-pattern>/viewTransaction</url-pattern>
   </servlet-mapping>
-
+	<servlet-mapping>
+		<servlet-name>viewAccount</servlet-name>
+		<url-pattern>/viewAccount</url-pattern>
+	</servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>transHistory</servlet-name>

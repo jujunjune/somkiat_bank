@@ -1,3 +1,4 @@
+<%@page import="somkiat.bank.account.dto.Account"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -15,7 +16,10 @@
 <body>
 	<div class="container-fluid">
 		<h2>Hello World!</h2>
-		<a href="${contextPath}/viewTransaction">View Transaction</a>
+		<a href="${contextPath}/viewTransaction">View Transaction</a> <span>${account.accountNo}</span>
+		<span>${account.accountName}</span>
+
+		<c:out value="${account.accountName}"></c:out>
 	</div>
 
 </body>
