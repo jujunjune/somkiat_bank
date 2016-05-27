@@ -13,35 +13,39 @@
 	rel="stylesheet" />
 </head>
 <body>
-<form method="get" action="${contextPath }">
 	<div class="container-fluid">
-		<div class="col-md-12 text-center">
-			<label><h2 id="head-summary">โอนเงินสำเร็จ</h2></label>
-		</div>
-		<% MstAccount account = (MstAccount)request.getAttribute("account"); %>
-		<div class="row">
-			<label id="account-no" class="col-md-2 control-label">เลชที่บัญชี
-			</label>
-			<div class="col-md-2">
-				<span><%=account.getAccountNo()%></span>
+		<form method="get" action="${contextPath }">
+			<div class="container-fluid">
+				<div class="col-md-12 text-center">
+					<label><h2 id="head-summary">โอนเงินสำเร็จ</h2></label>
+				</div>
+				<%
+					MstAccount account = (MstAccount) request.getAttribute("account");
+				%>
+				<div class="row">
+					<label id="account-no" class="col-md-2 control-label">เลชที่บัญชี
+					</label>
+					<div class="col-md-2">
+						<span><%=account.getAccountNo()%></span>
+					</div>
+					<div class="col-md-8"></div>
+				</div>
+				<div class="row">
+					<label id="account-no" class="col-md-2 control-label">จำนวนเงิน
+						(บาท) </label>
+					<div class="col-md-2">
+						<span><%=account.getAccountBalance()%></span>
+					</div>
+					<div class="col-md-8"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<button type="submit" id="ok">OK</button>
+					</div>
+					<div class="col-md-10"></div>
+				</div>
 			</div>
-			<div class="col-md-8"></div>
-		</div>
-		<div class="row">
-			<label id="account-no" class="col-md-2 control-label">จำนวนเงิน (บาท)
-			</label>
-			<div class="col-md-2">
-				<span><%=account.getAccountBalance()%></span>
-			</div>
-			<div class="col-md-8"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<button type="submit" id="ok">OK</button>
-			</div>
-			<div class="col-md-10"></div>
-		</div>
+		</form>
 	</div>
-</form>
 </body>
 </html>
