@@ -1,6 +1,7 @@
 <%@page import="somkiat.bank.account.dto.Account"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
@@ -43,11 +44,15 @@
 							</td>
 							<td valign="top">
 								<div class="container-fluid">
-									<h2>Hello World!</h2>
-									<a href="${contextPath}/viewTransaction">View Transaction</a> <span>${account.accountNo}</span>
-									<span>${account.accountName}</span>
+									<h2>Account Information</h2>
+
+									<span>${account.accountNo}</span>
 
 									<c:out value="${account.accountName}"></c:out>
+									<fmt:formatNumber type="number" pattern="#,###.00"
+										value="${account.accountBalance}" />
+									<fmt:formatDate pattern="dd/MM/yyyy hh:mm"
+										value="${account.lastUpdate}" />
 								</div>
 							</td>
 						</tr>
