@@ -65,9 +65,15 @@ public class IncomeTransactionService
 	{
 		IncomeTransactionVO vo = new IncomeTransactionVO();
 		vo.setNo(String.valueOf(no));
-		vo.setTransactionDate( "" );
-		vo.setAmountTransfer( "" );
-		vo.setAccountNoTransfer("");
+		
+		String transactionDateStr = String.valueOf( transaction.getTxnDate() );
+		vo.setTransactionDate( transactionDateStr );
+		
+		String amount = String.valueOf( transaction.getAmountTransfer() );
+		vo.setAmountTransfer( amount );
+		
+		String accountNoTransfer = String.valueOf( transaction.getAccountNoTransfer() );
+		vo.setAccountNoTransfer( accountNoTransfer );
 		
 		return vo;
 	}
