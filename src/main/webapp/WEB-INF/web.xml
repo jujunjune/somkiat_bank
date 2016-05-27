@@ -9,13 +9,30 @@
 		<servlet-name>transfer</servlet-name>
 		<servlet-class>somkiat.bank.Transfer</servlet-class>
 	</servlet>
-	
+	<servlet>
+		<servlet-name>viewAccount</servlet-name>
+		<servlet-class>somkiat.bank.ViewAccountServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>incomeTrans</servlet-name>
+		<servlet-class>somkiat.bank.IncomeTrans</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>transfer</servlet-name>
 		<url-pattern>/transfer</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet-mapping>
+		<servlet-name>viewAccount</servlet-name>
+		<url-pattern>/viewAccount</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>incomeTrans</servlet-name>
+		<url-pattern>/incomeTrans</url-pattern>
+	</servlet-mapping>
+
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>viewAccount</welcome-file>
 	</welcome-file-list>
 </web-app>
