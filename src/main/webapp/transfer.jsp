@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="somkiat.bank.account.dto.Account" %>
+<%@page import="somkiat.bank.account.dto.MstAccount" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html>
@@ -17,29 +17,29 @@
 	<div class="col-md-12 text-center">
 		<label><h2>Money transfer (Same bank)</h2></label>
 	</div>
-	<% Account account = (Account)request.getAttribute("account"); %>
-		<form action="" class="form-horizontal">
+ 	<% MstAccount account = (MstAccount)request.getAttribute("account"); %>
+		<form action="${contextPath}/transfer" class="form-horizontal" method="post">
 			<div class="form-group">
 				<label id="account-no" class="col-md-2 control-label">เลขที่บัญชี: </label> 
-				<span class="col-md-2" ><%=account.getAccountNo()%></span>
+				<span class="col-md-2" ><%=account.getAccountNo() %></span>
 				<div class="col-md-8"></div>
 			</div>
 			<div class="form-group">
 				<label id="account-no" class="col-md-2 control-label">ยอดเงินคงเหลือ: </label> 
-				<span class="col-md-2">9999999.00</span>
+				<span class="col-md-2"><%=account.getAccountBalance() %></span>
 				<div class="col-md-10"></div>
 			</div>
 			<div class="form-group">
 				<label id="account-no" class="col-md-2 control-label">เลขที่บัญชีปลายทาง: </label> 
 				<div class="col-md-2">
-					<input type="text" class="col-md-2 form-control" id="to-transafer-no-txt"/>					
+					<input type="text" name="account-no-to" class="col-md-2 form-control" id="to-transafer-no-txt"/>					
 				</div>
 				<div class="col-md-8"></div>
 			</div>
 			<div class="form-group">
 				<label id="account-no" class="col-md-2 control-label">จำนวนเงิน: </label> 
 				<div class="col-md-2">
-					<input type="text" class="col-md-2 form-control" id="amount-txt"/>					
+					<input type="text" name="amount-transfer" class="col-md-2 form-control" id="amount-txt"/>					
 				</div>
 				<div class="col-md-8"></div>
 			</div>
