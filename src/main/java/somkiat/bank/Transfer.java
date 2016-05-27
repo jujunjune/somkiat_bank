@@ -50,7 +50,11 @@ public class Transfer extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String accountTo = req.getParameter("account-no-to");
 		String amountTransfer = req.getParameter("amount-transfer");
+		System.out.println(accountTo);
 		System.out.println("Post");
+		
+		req.setAttribute("account", account);
+		req.getRequestDispatcher("/transfer.jsp").forward(req, resp);
 	}
 
 	private MstAccount getAccount(){
