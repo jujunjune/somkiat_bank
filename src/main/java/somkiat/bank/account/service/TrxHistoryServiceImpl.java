@@ -82,13 +82,8 @@ public class TrxHistoryServiceImpl {
 		try{
 			
 			System.out.println(" listTrxHistory Begin");
-			
 
-			//session.beginTransaction();
-			
 			query = session.createQuery("select p from TxnHistory p ");
-			
-			
 			
 			System.out.println(" ListTrxHistory Done");
 			list = query.list();
@@ -105,7 +100,9 @@ public class TrxHistoryServiceImpl {
 		}
 	}
 	private void closeSession()throws Exception{
-		if(session.isOpen())
-			session.close();
+System.out.println("close session : "+session.isOpen());		
+		/*if(session.isOpen())
+			session.close();*/
+		HibernateUtil.closeSession();
 	}
 }
