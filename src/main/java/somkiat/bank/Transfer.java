@@ -21,7 +21,7 @@ import somkiat.bank.account.service.TrxHistoryServiceImpl;
 import somkiat.bank.util.HibernateUtil;
 
 public class Transfer extends HttpServlet {
-	private Session session = null;
+
 
 
 	private static final long serialVersionUID = 4437947293029836364L;
@@ -85,23 +85,19 @@ public class Transfer extends HttpServlet {
 	}
 
 	private void updateAccount(MstAccount obj) {
-		session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
-
 			System.out.println(" updateMaster Account Begin");
-
 			session.beginTransaction();
-
 			session.update(obj);
-
 			session.getTransaction().commit();
-
 			session.close();
 
 			System.out.println(" updateMaster Account Done");
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			session.close();
 		}
 	}
 }

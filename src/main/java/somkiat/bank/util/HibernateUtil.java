@@ -18,7 +18,4 @@ public class HibernateUtil {
 		return sessionFactory;
 	}
 	
-	public static void closeSession(){
-		getSessionFactory().close();
-	}
 }

@@ -100,9 +100,8 @@ public class TrxHistoryServiceImpl {
 		}
 	}
 	private void closeSession()throws Exception{
-System.out.println("close session : "+session.isOpen());		
-		/*if(session.isOpen())
-			session.close();*/
-		HibernateUtil.closeSession();
+		System.out.println("close session : "+session.isOpen());
+		if(session.isOpen())
+			session.close();
 	}
 }
