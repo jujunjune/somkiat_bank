@@ -15,7 +15,8 @@ public class ViewTransaction extends HttpServlet{
 	private static final long serialVersionUID = 4437947293029836364L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("test");
 		req.getRequestDispatcher("/transaction/viewTransaction.jsp").forward(req, resp);
 	}
 
