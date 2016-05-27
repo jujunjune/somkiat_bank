@@ -32,7 +32,7 @@
 			<div class="form-group">
 				<label id="account-no" class="col-md-2 control-label">เลขที่บัญชีปลายทาง: </label> 
 				<div class="col-md-2">
-					<input type="text" name="account-no-to" class="col-md-2 form-control" id="to-transafer-no-txt"/>					
+					<input type="text" name="accountnoto" class="col-md-2 form-control" id="to-transafer-no-txt"/>					
 				</div>
 				<div class="col-md-8"></div>
 			</div>

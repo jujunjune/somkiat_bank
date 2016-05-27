@@ -23,6 +23,14 @@
 			<label id="account-no" class="col-md-2 control-label">เลชที่บัญชี
 			</label>
 			<div class="col-md-2">
+				<span><%=account.getAccountNo()%></span>
+			</div>
+			<div class="col-md-8"></div>
+		</div>
+		<div class="row">
+			<label id="account-no" class="col-md-2 control-label">จำนวนเงิน (บาท)
+			</label>
+			<div class="col-md-2">
 				<span><%=account.getAccountBalance()%></span>
 			</div>
 			<div class="col-md-8"></div>
