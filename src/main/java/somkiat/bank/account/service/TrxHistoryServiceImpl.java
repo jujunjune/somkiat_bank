@@ -11,7 +11,7 @@ import somkiat.bank.util.HibernateUtil;
 public class TrxHistoryServiceImpl {
 	private Session session = null;
 	
-	public TrxHistoryServiceImpl(){
+	public void createFactory(){
 		session = HibernateUtil.getSessionFactory().openSession();
 	}
 	
@@ -21,6 +21,7 @@ public class TrxHistoryServiceImpl {
 			System.out.println(" createTrxHistory Begin");
 			
 
+			this.createFactory();
 			session.beginTransaction();
 			
 			session.save(obj);
@@ -46,7 +47,7 @@ public class TrxHistoryServiceImpl {
 			
 			System.out.println(" updateTrxHistory Begin");
 			
-
+			this.createFactory();
 			session.beginTransaction();
 			
 			session.update(obj);
@@ -71,7 +72,7 @@ public class TrxHistoryServiceImpl {
 		try{
 			
 			System.out.println(" deleteTrxHistory Begin");
-			
+			this.createFactory();
 			session.beginTransaction();
 			
 			session.delete(obj);
@@ -97,7 +98,7 @@ public class TrxHistoryServiceImpl {
 		try{
 			
 			System.out.println(" listTrxHistory Begin");
-
+			this.createFactory();
 			query = session.createQuery("select p from TxnHistory p ");
 			
 			System.out.println(" ListTrxHistory Done");
@@ -121,8 +122,8 @@ public class TrxHistoryServiceImpl {
 	}
 	private void closeSession()throws Exception{
 System.out.println("close session : "+session.isOpen());		
-		/*if(session.isOpen())
-			session.close();*/
-		HibernateUtil.closeSession();
+		if(session.isOpen())
+			session.close();
+		//HibernateUtil.closeSession();
 	}
 }
