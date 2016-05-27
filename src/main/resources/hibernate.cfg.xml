@@ -13,17 +13,17 @@
 
    <!-- Assume test is the database name -->
    <property name="hibernate.connection.url">
-      jdbc:mysql://localhost/somkiatbank
+      jdbc:mysql://107.170.105.104/somkiatbank
    </property>
    <property name="hibernate.connection.username">
-      root
+      user
    </property>
    <property name="hibernate.connection.password">
-      1234
+      euro2016
    </property>
 
    <!-- List of XML mapping files -->
-   <mapping class="somkiat.bank.Account"/>
+   <mapping class="somkiat.bank.account.dto.Account"/>
 
 </session-factory>
 </hibernate-configuration>

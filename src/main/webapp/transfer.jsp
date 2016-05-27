@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@page import="somkiat.bank.account.dto.Account" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html>
@@ -17,10 +17,11 @@
 	<div class="col-md-12 text-center">
 		<label><h2>Money transfer (Same bank)</h2></label>
 	</div>
+	<% Account account = (Account)request.getAttribute("account"); %>
 		<form action="" class="form-horizontal">
 			<div class="form-group">
 				<label id="account-no" class="col-md-2 control-label">เลขที่บัญชี: </label> 
-				<span class="col-md-2" ><%=request.getAttribute("account") %></span>
+				<span class="col-md-2" ><%=account.getAccountNo()%></span>
 				<div class="col-md-8"></div>
 			</div>
 			<div class="form-group">
