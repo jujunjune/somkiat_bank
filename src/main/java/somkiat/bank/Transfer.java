@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ViewTransaction extends HttpServlet{
+public class Transfer extends HttpServlet{
 
 	/**
 	 * 
@@ -15,8 +15,9 @@ public class ViewTransaction extends HttpServlet{
 	private static final long serialVersionUID = 4437947293029836364L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
-		req.getRequestDispatcher("/transaction/viewTransaction.jsp").forward(req, resp);
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setAttribute("account", "123");
+		req.getRequestDispatcher("/transfer.jsp").forward(req, resp);
 	}
 
 	@Override

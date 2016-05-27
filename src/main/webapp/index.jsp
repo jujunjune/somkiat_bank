@@ -15,7 +15,7 @@
 <body>
 	<div class="container-fluid">
 		<h2>Hello World!</h2>
-		<a href="${contextPath}/viewTransaction">View Transaction</a>
+		<a href="${contextPath}/transfer">View Transaction</a>
 	</div>
 
 </body>
