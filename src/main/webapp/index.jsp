@@ -14,45 +14,66 @@
 <link href="${contextPath}/css/bootstrap-3.3.6-dist/css/bootstrap.css"
 	rel="stylesheet" />
 </head>
-
 <body>
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="page-header">
-					<h1>Bank of Somkiat</h1>
+				<div class="page-header" style="border-bottom: 1px solid #000;">
+					<!--<h1>
+					<font style="padding:15px; ">Bank of Somkiat</font>
+				</h1>-->
+					<img src="${contextPath}/images/logo.png">
 				</div>
 				<div class="row">
-					<table width="100%">
+					<table width="100%" border="1px" cellspacing="0px"
+						cellpadding="0px">
 						<tr>
-							<td width="20%" valign="top">
-								<div>
-									<a>หน้าแรก</a>
+							<td width="20%" valign="top"
+								style="background-color: #000; padding: 5px; color: #fff;">
+								<div style="border-bottom: 1px solid #fff; padding: 10px;">
+									<a href="" style="text-decoration: none; color: #fff;">หน้าแรก</a>
 								</div>
-								<div>
-									<a>โอนเงิน</a>
+								<div style="border-bottom: 1px solid #fff; padding: 10px;">
+									<a href="" style="text-decoration: none; color: #fff;">โอนเงิน</a>
 								</div>
-								<div>
-									<a>รายการเข้า</a>
-									<ul>
-
-										<li><a>เงินเข้า</a></li>
-										<li><a>เงินออก</a></li>
-									</ul>
+								<div style="border-bottom: 1px solid #fff; padding: 10px;">
+									<a href="" style="text-decoration: none; color: #fff;">รายการเข้า</a>
+								</div>
+								<div
+									style="border-bottom: 1px solid #fff; padding: 10px 10px 10px 40px;">
+									<a href="" style="text-decoration: none; color: #fff;">เงินเข้า</a>
+								</div>
+								<div style="padding: 10px 10px 10px 40px;">
+									<a href="" style="text-decoration: none; color: #fff;">เงินออก</a>
 								</div>
 							</td>
 							<td valign="top">
-								<div class="container-fluid">
-									<h2>Account Information</h2>
+								<div style="padding: 20px;">
+									<div class="container-fluid">
+										<table>
+											<tr>
+												<td>เลขที่บัญชี :</td>
+												<td id="account_no_label">${account.accountNo}</td>
 
-									<span>${account.accountNo}</span>
-
-									<c:out value="${account.accountName}"></c:out>
-									<fmt:formatNumber type="number" pattern="#,###.00"
-										value="${account.accountBalance}" />
-									<fmt:formatDate pattern="dd/MM/yyyy hh:mm"
-										value="${account.lastUpdate}" />
+											</tr>
+											<tr>
+												<td>ชื่อบัญชี :</td>
+												<td id="account_name_label">${account.accountName}</td>
+											</tr>
+											<tr>
+												<td>ยอดเงินคงเหลือ :</td>
+												<td id="account_balance_label"><fmt:formatNumber
+														type="number" pattern="#,###.00"
+														value="${account.accountBalance}" /></td>
+											</tr>
+											<tr>
+												<td>ปรับปรุงเมื่อ :</td>
+												<td id="last_update_label"><fmt:formatDate
+														pattern="dd/MM/yyyy hh:mm" value="${account.lastUpdate}" /></td>
+											</tr>
+										</table>
+									</div>
 								</div>
 							</td>
 						</tr>
