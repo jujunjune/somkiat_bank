@@ -1,5 +1,7 @@
+<%@page import="somkiat.bank.account.dto.Account"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
@@ -12,11 +14,57 @@
 <link href="${contextPath}/css/bootstrap-3.3.6-dist/css/bootstrap.css"
 	rel="stylesheet" />
 </head>
+
 <body>
+
 	<div class="container-fluid">
-		<h2>Hello World!</h2>
-		<a href="${contextPath}/viewTransaction">View Transaction</a>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h1>Bank of Somkiat</h1>
+				</div>
+				<div class="row">
+					<table width="100%">
+						<tr>
+							<td width="20%" valign="top">
+								<div>
+									<a>หน้าแรก</a>
+								</div>
+								<div>
+									<a>โอนเงิน</a>
+								</div>
+								<div>
+									<a>รายการเข้า</a>
+									<ul>
+
+										<li><a>เงินเข้า</a></li>
+										<li><a>เงินออก</a></li>
+									</ul>
+								</div>
+							</td>
+							<td valign="top">
+								<div class="container-fluid">
+									<h2>Account Information</h2>
+
+									<span>${account.accountNo}</span>
+
+									<c:out value="${account.accountName}"></c:out>
+									<fmt:formatNumber type="number" pattern="#,###.00"
+										value="${account.accountBalance}" />
+									<fmt:formatDate pattern="dd/MM/yyyy hh:mm"
+										value="${account.lastUpdate}" />
+								</div>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+		</div>
 	</div>
 
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
 </html>

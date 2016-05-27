@@ -1,6 +1,8 @@
 package somkiat.bank;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -29,11 +31,22 @@ public class ViewAccountServlet extends HttpServlet {
 
 		session.beginTransaction();
 
-		String sql = "from Account where accountNo =:account_no";
-		Query query = session.createQuery(sql);
+		String sql = "select a.* from mst_account as a where a.account_no =:account_no";
+		Query query = session.createSQLQuery(sql);
 		query.setParameter("account_no", accountNo);
-		List<Account> account = query.list();
+		List<Object> account = query.list();
+		System.out.println(account.get(0));
+		session.getTransaction().commit();
+		return convertObjectToAccount(account.get(0));
+	}
 
-		return account.get(0);
+	Account convertObjectToAccount(Object objects) {
+		Object[] objs = (Object[]) objects;
+		Account account = new Account();
+		account.setAccountNo(String.valueOf(objs[0]));
+		account.setAccountName(String.valueOf(objs[1]));
+		account.setAccountBalance(new BigDecimal(String.valueOf(objs[2])));
+		account.setLastUpdate((Date) objs[3]);
+		return account;
 	}
 }
